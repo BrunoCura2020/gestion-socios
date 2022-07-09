@@ -60,10 +60,6 @@ class SocioController extends Controller
         $socios -> tel_laboral    = $request -> get('tel_laboral');
         $socios -> tel_residencia = $request -> get('tel_residencia');
 
-
-
-
-
         $socios->save();
         return redirect('/socios');
     }
@@ -87,7 +83,8 @@ class SocioController extends Controller
      */
     public function edit($id)
     {
-       //
+        $socio = Socio::find($id); 
+        return view('socio.edit')->with('socio', $socio); //enviamos todos nuestros registros a la vista
     }
 
     /**
@@ -99,7 +96,18 @@ class SocioController extends Controller
      */
     public function update(Request $request, $id)
     {
-       //
+        $socio = Socio::find($id);
+        
+        $socio -> nombre       = $request->get('nombre');
+        $socio -> apellido     = $request->get('apellido');
+        $socio -> doc          = $request->get('doc');
+        $socio -> nacionalidad = $request->get('nacionalidad');
+        $socio -> domicilio    = $request->get('domicilio');
+        $socio -> email       = $request->get('email');
+
+        $socio -> save();
+
+        return redirect('/socios');
     }
 
     /**

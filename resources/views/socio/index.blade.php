@@ -28,7 +28,11 @@
                         <th scope='col'>#</th>
                         <th scope='col'>Nombre</th>
                         <th scope='col'>Apellido</th>
-                        <th scope='col'>D.N.I</th>
+                        <th scope='col'>Documento</th>
+                        <th scope='col'>Nacionalidad</th>
+                        <th scope='col'>Domicilio</th>
+                        <th scope='col'>Correo</th>
+                        <th scope='col'>Acciones</th>
                     </tr>
                 </thead>
             </table>
@@ -42,12 +46,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre" >
+                        <input type="text" name="nombre" class="form-control" id="nombre" required>
                     </div>
 
                     <div class="form-group col-md-5">
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" id="apellido">
+                        <input type="text" name="apellido" class="form-control" id="apellido" required>
                     </div>
                 </div>
 
@@ -56,7 +60,7 @@
                         <div class="form-group">
                             <label for="">Documento de identidad</label>
                             <div class="input-group">
-                                <input name="doc" id="doc" type="number" class="form-control">
+                                <input name="doc" id="doc" type="number" class="form-control" required>
                                 <select id="tipo">
                                     <option value="le">L.E.</option>
                                     <option value="lc">L.C.</option>
@@ -67,15 +71,14 @@
                         </div>
                     </div>
                 </div>
-
                 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <div class="form-group">
                             <label for="nac">Lugar / Fecha de nacimiento</label>
                             <div class="input-group">
-                                <input type="text" name="lugar_nac" class="form-control" id="lugar_nac">
-                                <input type="date" name="fecha_nac" class="form-control" id="fecha_nac" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
+                                <input type="text" name="lugar_nac" class="form-control" id="lugar_nac" required>
+                                <input type="date" name="fecha_nac" class="form-control" id="fecha_nac" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" required>
                             </div>
                         </div>
                     </div>
@@ -84,42 +87,42 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="nacionalidad">Nacionalidad</label>
-                        <input type="text" name="nacionalidad" class="form-control" id="nacionalidad">
+                        <input type="text" name="nacionalidad" class="form-control" id="nacionalidad" required>
                     </div>
 
                     <div class="form-group col-md-5">
                         <label for="profesion">Profesión</label>
-                        <input type="text" name="profesion" class="form-control" id="profesion">
+                        <input type="text" name="profesion" class="form-control" id="profesion" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="domicilio">Domicilio</label>
-                        <input type="text" name="domicilio" class="form-control" id="domicilio">
+                        <input type="text" name="domicilio" class="form-control" id="domicilio" required>
                     </div>
 
                     <div class="form-group col-md-5">
                         <label for="email">E-MAIL</label>
-                        <input type="email" name="email" class="form-control" id="email">
+                        <input type="   " name="email" class="form-control" id="email" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="localidad">Localidad</label>
-                        <input type="text" name="localidad" class="form-control" id="localidad">
+                        <input type="text" name="localidad" class="form-control" id="localidad" required>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="postal">C.Postal</label>
-                        <input type="text" name="postal" class="form-control" id="postal">
+                        <input type="number" name="postal" class="form-control" id="postal" required>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="tel">Teléfono</label>
-                        <input type="text" name="tel_laboral" class="form-control" id="tel_laboral" placeholder="Laboral">
-                        <input type="text" name= "tel_residencia" class="form-control" id="tel_residencia" placeholder="Residencia">
+                        <input type="number" name="tel_laboral" class="form-control" id="tel_laboral" placeholder="Laboral" required>
+                        <input type="number" name= "tel_residencia" class="form-control" id="tel_residencia" placeholder="Residencia" required>
                     </div>
                 </div>
 
@@ -173,11 +176,16 @@
             {data:'id'},  
             {data:'nombre'},  
             {data:'apellido'},  
-            {data:'doc'},  
+            {data:'doc'},
+            {data:'nacionalidad'},
+            {data:'domicilio'},
+            {data:'email'},
+            {data: 'btn'}
         ],
     });
 });
+</script>
 
-    </script>
 @stop
+
 
